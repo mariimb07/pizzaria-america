@@ -1,4 +1,5 @@
 import {
+    HashRouter,
     BrowserRouter,
     Routes,
     Route
@@ -10,29 +11,33 @@ import {
 import HomeFuncionario from '../pages/HomeFuncionario/HomeFuncionario'
 import ListarProduto from '../pages/ListarProduto/ListarProduto'
 
+// BrowserRouter : Navegação utilizando a tag html <a></a> com href "Sempre recarrega a página"
+// HashRouter: Navegaçãp utilizando o componente <Link></Link> do react-router-dom "Recarrega só o necessário"
+
+
 const AppRoutes = () => {
 
 
     return (
-                <BrowserRouter>
+                <HashRouter>
                     <Routes>
                             <Route
                                 path="/"
                                 element={<HomeFuncionario/>}
                             />
                             <Route
-                                path="/pizzaria/funcionario/home"
+                                path="/home"
                                 element={<HomeFuncionario/>}
                             />
 
                              <Route
-                                path="/pizzaria/funcionario/produtos"
+                                path="/produtos"
                                 element={<ListarProduto/>}
                             />
    
    
                     </Routes>    
-                </BrowserRouter>
+                </HashRouter>
     )
 }
 
