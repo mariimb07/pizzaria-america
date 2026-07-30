@@ -1,16 +1,14 @@
-import styles from './MenuFuncionario.module.css'
 
+import styles from './MenuFuncionario.module.css'
 
 import { Link } from 'react-router-dom'
 
 
 const MenuFuncionario = () => {
 
-
-    return (
-
+  return (
         <div>
-                <nav className={`navbar navbar-expand-lg navbar-light bg-light p-2 rounded shadow-sm w-100 ${styles.menu}`}>
+        <nav className={`navbar navbar-expand-lg navbar-light bg-light p-2 rounded shadow-sm w-100 ${styles.menu}`}>
         
         <Link
         to="/home"
@@ -41,8 +39,6 @@ const MenuFuncionario = () => {
              >
                 Produtos
             </Link>
-
-
             </li>
             <li className="nav-item">
             <Link
@@ -52,8 +48,6 @@ const MenuFuncionario = () => {
                Categorias
             </Link>
             </li>
-
-
             <li className="nav-item">
             <Link
               to='/estoque'
@@ -65,7 +59,7 @@ const MenuFuncionario = () => {
 
             {/* Dropdown Menu */}
             <li className="nav-item dropdown">
-              <a
+              <Link
                 className="nav-link dropdown-toggle"
                 href="#"
                 role="button"
@@ -73,31 +67,31 @@ const MenuFuncionario = () => {
                 aria-expanded="false"
               >
                 Opções
-              </a>
+              </Link>
               <ul className="dropdown-menu">
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" href="#">
                     Ação 1
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" href="#">
                     Ação 2
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" href="#">
                     Outra opção
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link disabled">Desativado</a>
+              <Link className="nav-link disabled">Desativado</Link>
             </li>
           </ul>
 

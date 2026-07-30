@@ -3,7 +3,8 @@ import {
     BrowserRouter,
     Routes,
     Route
-} from "react-router-dom"
+} 
+from "react-router-dom"
 
 //Obs: Para importar componentes específicos de uma tecnologia, escolha o componente específico, caso mais de 1
 //      utilize a vírgula para seoará-los
