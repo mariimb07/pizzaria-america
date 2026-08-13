@@ -11,6 +11,7 @@ from "react-router-dom"
 
 import HomeFuncionario from '../pages/HomeFuncionario/HomeFuncionario'
 import ListarProduto from '../pages/ListarProduto/ListarProduto'
+import ListarCategoria from "../pages/ListarProduto/ListarCategoria"
 
 // BrowserRouter : Navegação utilizando a tag html <a></a> com href "Sempre recarrega a página"
 // HashRouter: Navegaçãp utilizando o componente <Link></Link> do react-router-dom "Recarrega só o necessário"
@@ -35,6 +36,11 @@ const AppRoutes = () => {
                                 path="/produtos"
                                 element={<ListarProduto/>}
                             />
+
+                            <Route
+                                path="/categorias"
+                                element={<ListarCategoria/>}
+                         />
    
    
                     </Routes>    
