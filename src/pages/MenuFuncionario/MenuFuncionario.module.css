@@ -1,9 +1,24 @@
-
 .menu {
-
+ 
     background: linear-gradient(
         90deg,
-        #2c8dee,
-        #0f3053
-    )
+        #0f5faf,
+        #062647
+    );
+}
+ 
+.logo {
+    color: white !important;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+ 
+.itemMenu {
+    color: rgba(255, 255, 255, .8) !important;
+    transition: .3s;
+}
+ 
+.itemMenu:hover {
+    color: rgb(0, 0, 0) !important;
+    transform: translateY(-1px);
 }

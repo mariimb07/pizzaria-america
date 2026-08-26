@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react"
 import api from "../../services/api"
 
+import { Link } from "react-router-dom"
+
 import MenuFuncionario from "../MenuFuncionario/MenuFuncionario"
 
 
@@ -118,11 +120,19 @@ const ListarProduto = () => {
             ))}
 
             
-             
           </tbody> 
         </table> 
       </div> 
             
+      <div className="text-end mt-3">
+            <Link
+            to="/produtos/novo"
+            className={`btn btn-sucess`}
+            >
+              <i className="fas fa-plus"></i>
+              Novo Produto
+            </Link>
+       </div>
         </div>
     )
 }
