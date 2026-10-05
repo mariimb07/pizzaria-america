@@ -1,26 +1,29 @@
-import React, {useState, useEffect} from "react"
-import api from "../../services/api"
-
-import { Link } from "react-router-dom"
-
 import MenuFuncionario from "../MenuFuncionario/MenuFuncionario"
 
 
 const ListarProduto = () => {
 
-   
-// Explicação useStates
-// const [nome da variável, nome da função para alterar o valor da variável] = useState(valor inicial da variável)
-// Obs: o nome da função SEMPRE começa com a palavra "set"
-// Exemplo: Quero declarar uma variável número cujo valor inicial em 0
-// const[numero, setNumero] = useState(0)
+    const arrayProdutos = [
+        {
+            id: 1,
+            nome: "Pizza de Calabresa",
+            precoVenda: 59.90,
+            descricao: "Piza de calabresa com bastante cebola"
+        },
+         {
+            id: 2,
+            nome: "Pizza de Mussarela",
+            precoVenda: 69.90,
+            descricao: "Pizza de mussarela com tomates frescos"
+        },
+         {
+            id: 3,
+            nome: "Pizza de Frango",
+            precoVenda: 63.80,
+            descricao: "Pizza de frango com catupiry"
+        }
 
-// Explicação useEffect : Um hook utilizado para executar códigos que ficam fora do controle direto da renderizaçao da página
-//                        chamados de "efeitos colaterais"
-// Exemplo: buscar dados de uma API, configurar cronômetros, fazer algo quando o usuário aperta uma tecla
-// Obs: [] manter vazio, quando você quiser que o seu código rode exatamente uma única vez, logo após o componente aparecer na tela
-//      pela primeira vez, resumindo "Execute isso quando a página carregar e depois ignore", não importa o que mude na tela!
-
+    ]
 
   const [produtos, setProdutos] = useState([])
 
@@ -45,27 +48,7 @@ const ListarProduto = () => {
   //Lista temporária de produtos
 
  /*   
-  const arrayProdutos = [
-        {
-            id: 1,
-            nome: "Pizza de Calabresa",
-            precoVenda: 59.90,
-            descricao: "Piza de calabresa com bastante cebola"
-        },
-         {
-            id: 2,
-            nome: "Pizza de Mussarela",
-            precoVenda: 69.90,
-            descricao: "Pizza de mussarela com tomates frescos"
-        },
-         {
-            id: 3,
-            nome: "Pizza de Frango",
-            precoVenda: 63.80,
-            descricao: "Pizza de frango com catupiry"
-        }
-
-    ]
+ 
 */
    
    
@@ -77,7 +60,7 @@ const ListarProduto = () => {
         
         <div className="table-responsive"> 
         <table className="table table-bordered table-striped table-hover"> 
-          <thead className="table-sucess"> 
+          <thead className="table-success"> 
             <tr> 
               <th>Nome</th> 
               <th>Preço</th> 
@@ -87,9 +70,9 @@ const ListarProduto = () => {
           </thead> 
           <tbody>
 
-            {produtos.map((produto)=> (
+            {arrayProdutos.map((produto)=> (
 
-                 <tr> 
+                 <tr key={produto.id}> 
                 <td style={{ fontSize: "13px" }}> {produto.nome}</td> 
                 <td style={{ fontSize: "13px" }}> 
                         {
@@ -99,7 +82,7 @@ const ListarProduto = () => {
                             }).format(produto.precoVenda)
                         }
                 </td> 
-                <td style={{ fontSize: "13px" }}></td> 
+                <td style={{ fontSize: "13px" }}>{produto.descricao}</td> 
                 <td className="text-center fs-6" style={{ width: "100px" }}> 
                   {/* Botão de Editar */} 
                   <button 

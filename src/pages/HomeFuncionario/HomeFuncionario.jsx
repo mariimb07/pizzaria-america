@@ -4,8 +4,8 @@ import MenuFuncionario from "../MenuFuncionario/MenuFuncionario"
 const HomeFuncionario = () => {
 
     return (
-
-        <div className="container">
+            <div className="container">
+                
             <MenuFuncionario/>
             
             # Home
