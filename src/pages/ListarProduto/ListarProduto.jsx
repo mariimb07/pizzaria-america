@@ -1,7 +1,10 @@
 import MenuFuncionario from "../MenuFuncionario/MenuFuncionario"
-
+import { useState, useEffect} from "react"
+import { Link, useNavigate } from "react-router-dom"
+import api from "../../services/api"
 
 const ListarProduto = () => {
+  const navigate = useNavigate()
 
     const arrayProdutos = [
         {
@@ -26,7 +29,7 @@ const ListarProduto = () => {
     ]
 
   const [produtos, setProdutos] = useState([])
-
+ 
   useEffect(()=>{
     api
       .get("/produtos")
@@ -37,7 +40,7 @@ const ListarProduto = () => {
       })
       .catch((error)=>{
         // deu ruim :(
-      console.error(`Erro ao buscar a lista de produtos. ", ${error}`)
+      console.error(`Erro ao buscar a lista de produtos:", ${error}`)
       })
 
   }, [])
@@ -52,7 +55,9 @@ const ListarProduto = () => {
 */
    
    
-   
+   const editarProduto = (produto) => {
+    navigate(`/produtos/editar/${produto.id}`)
+   }
    
     return (
          <div className="container">
@@ -70,7 +75,7 @@ const ListarProduto = () => {
           </thead> 
           <tbody>
 
-            {arrayProdutos.map((produto)=> (
+            {produtos.map((produto)=> (
 
                  <tr key={produto.id}> 
                 <td style={{ fontSize: "13px" }}> {produto.nome}</td> 
@@ -86,14 +91,16 @@ const ListarProduto = () => {
                 <td className="text-center fs-6" style={{ width: "100px" }}> 
                   {/* Botão de Editar */} 
                   <button 
-                    className="btn btn-sm btn-primary me-2"> 
+                    className="btn btn-sm btn-primary me-2"
+                    onClick={() => editarProduto(produto)}> 
                     <i className="fas fa-pencil-alt"></i>{" "} 
                     {/* Ícone de editar */} 
                   </button> 
  
                   {/* Botão de Excluir */} 
                   <button 
-                    className="btn btn-sm btn-danger"> 
+                    className="btn btn-sm btn-danger"
+                    onClick={() => excluirProduto(produto.id)}> 
                     <i className="fas fa-trash-alt"></i>{" "} 
                     {/* Ícone de excluir */} 
                   </button> 
@@ -110,7 +117,7 @@ const ListarProduto = () => {
       <div className="text-end mt-3">
             <Link
             to="/produtos/novo"
-            className={`btn btn-sucess`}
+            className={"btn btn-success"}
             >
               <i className="fas fa-plus"></i>
               Novo Produto

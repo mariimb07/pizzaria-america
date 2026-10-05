@@ -11,7 +11,7 @@ import {
 
 import HomeFuncionario from "../pages/HomeFuncionario/HomeFuncionario"
 import ListarProduto from "../pages/ListarProduto/ListarProduto"
-import ListarCategoria from "../pages/ListarProduto/ListarCategoria"
+import ListarCategoria from "../pages/ListarCategoria/ListarCategoria"
 import NovoProduto from "../pages/NovoProduto/NovoProduto"
 
 // BrowserRouter : Navegação utilizando a tag html <a></a> com href "Sempre recarrega a página"
@@ -24,10 +24,6 @@ const AppRoutes = () => {
     return (
         <HashRouter>
             <Routes>
-                <Route
-                    path="/"
-                    element={<HomeFuncionario />}
-                />
                 <Route
                     path="/home"
                     element={<HomeFuncionario />}

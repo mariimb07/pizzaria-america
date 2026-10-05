@@ -1,13 +1,15 @@
-
 import MenuFuncionario from "../MenuFuncionario/MenuFuncionario"
 
 
 const ListarCategoria = () => {
 
+
     return (
         <div className="container">
             <MenuFuncionario/>
-            <p>Lista de Categorias dos Produtos</p>
+
+            <p>Listar Categorias do Produto</p>
+            
         </div>
     )
 }
