@@ -28,14 +28,14 @@ const ListarProduto = () => {
 
     ]
 
-  const [produtos, setProdutos] = useState([])
+  const [produtos, setProdutos] = useState(arrayProdutos)
  
   useEffect(()=>{
     api
       .get("/produtos")
       .then((response)=>{
         // deu certo :)
-      console.log(response.data.data)
+      console.log("RESPOSTA DA API:",response.data.data)
       setProdutos(response.data.data)
       })
       .catch((error)=>{

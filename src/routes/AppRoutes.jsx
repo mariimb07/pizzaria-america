@@ -24,6 +24,11 @@ const AppRoutes = () => {
     return (
         <HashRouter>
             <Routes>
+             <Route
+                    path="/"
+                    element={<HomeFuncionario />}
+                />
+
                 <Route
                     path="/home"
                     element={<HomeFuncionario />}
